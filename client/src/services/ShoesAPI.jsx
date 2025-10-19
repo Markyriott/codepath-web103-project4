@@ -10,7 +10,7 @@ const getAllShoes = async () => {
 
 const getShoeById = async (id) => {
     try{
-        const res = await fetch('/api/items/${id');
+        const res = await fetch(`/api/items/${id}`);
         const data = await res.json();
         return data;
     } catch(err) {
@@ -45,7 +45,7 @@ const updateShoe = async (id, data) => {
         body: JSON.stringify(data)
     }
     try{
-        const res = await fetch(`/api/shoes/${id}`, reqOptions);
+        const res = await fetch(`/api/items/${id}`, reqOptions);
         const data = await res.json();
         console.log(data);
     } catch (err){
@@ -54,11 +54,14 @@ const updateShoe = async (id, data) => {
 }
 
 const deleteShoe = async (id) => {
-    const reqOptions = {method: 'DELETE'};
+    const reqOptions = {method: `DELETE`};
     try{
-        const res = await fetch(`/api/shoes/${id}`, reqOptions);
-        const data = await res.json();
-        console.log(data);
+        const res = await fetch(`/api/items/${id}`, reqOptions);
+        if (res.ok) {
+            console.log('Shoe deleted successfully');
+        } else {
+            console.log('Error deleting shoe', res.statusText);
+        }
     } catch (err){
         console.log('Error deleting shoe', err);
     }

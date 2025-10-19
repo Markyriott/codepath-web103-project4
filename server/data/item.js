@@ -1,7 +1,7 @@
 const itemData = [
     {
         "name" : "Classic",
-        "color": "#000000",
+        "color": 0,
         "style": 1,
         "logo": 0,
         "sole": 0,

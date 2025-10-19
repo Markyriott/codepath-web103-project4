@@ -8,7 +8,7 @@ const createTables = async() => {
         CREATE TABLE IF NOT EXISTS shoes(
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        color VARCHAR(7) NOT NULL,
+        color INTEGER NOT NULL,
         style INTEGER NOT NULL,
         logo INTEGER NOT NULL,
         sole INTEGER NOT NULL,

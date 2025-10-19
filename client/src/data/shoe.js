@@ -11,6 +11,7 @@ const shoeData = {
         {name: 'High Top', image: '', price: 70}
     ],
     Logo : [
+        {name: 'None', image: '', price: 0},
         {name: 'Round', image: '', price: 0},
         {name: 'Checkmark', image: '', price: 10},
         {name: 'NB', image: '', price: 10}

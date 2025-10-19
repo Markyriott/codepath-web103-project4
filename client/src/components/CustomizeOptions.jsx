@@ -1,13 +1,14 @@
 import shoeData from '../data/shoe.js';
 
-export default function CustomizeOptions({ name, selected }){
-console.log(selected)
+export default function CustomizeOptions({ name, handleClick}) {
     return(
         <div>
-            <p>{name}</p>
+            <header>
+                <h3>{name}</h3>
+            </header>
             {
                 shoeData[name].map((option, index) =>
-                    <p key={index}>{option.name}</p>
+                    <button key={index} value={index} name={name.toLowerCase()}onClick={handleClick}>{option.name}</button>
                 )     
             }
         </div>
